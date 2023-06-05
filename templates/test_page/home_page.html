@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h3>Questions</h3>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {% for qus in qust %}
+
+        <div style="border: solid;padding: 5px;">
+            
+            <p>Q{{forloop.counter}}. {{ qus.question }}</p>
+            
+            <p>A.<input type="radio" name="{{qus.id}}" value="option1"> {{ qus.option1 }}</p>
+        
+            <p>B.<input type="radio" name="{{qus.id}}" value="option2"> {{ qus.option2 }}</p>
+            
+            <p>C.<input type="radio" name="{{qus.id}}" value="option3"> {{ qus.option3 }}</p>
+            
+            <p>D.<input type="radio" name="{{qus.id}}" value="option4"> {{ qus.option4 }}</p>
+            <br>
+            
+        </div>
+
+        
+    {% endfor %}
+    <br>
+    <button>Submit Answer</button>
+</form>   
+    
+{% endblock content %}
+    

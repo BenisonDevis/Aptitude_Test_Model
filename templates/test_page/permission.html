@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+{% for use in user %}
+
+
+{% if use.is_superuser == 0  %}
+    <div style="border: solid;padding: 10px;">
+        User Name : {{ use.username }}
+        <br>
+        Full Name : {{ use.first_name }}
+        <br>
+        Date Of Joining : {{ use.date_joined }}
+        <br><br>
+        <a href="{% url 'approve_sts' use.id %}"><button>{% if use.is_active %}approve{% else %} not approved{% endif %}</button></a>
+
+    </div>
+{% endif %}
+    
+
+    
+{% endfor %}
+    
+    
+{% endblock content %}
+    

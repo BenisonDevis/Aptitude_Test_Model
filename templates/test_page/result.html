@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+{% if ans.mark > 5 %}
+
+    <h1>Congratulations {{ ans.fk_user.first_name }}</h1>
+    <h3>You are Passed</h3>
+    <h2>Mark : {{ ans.mark }}</h2>
+
+{% else %}
+
+    <h1>Sorry {{ ans.fk_user.first_name }}</h1>
+    <h3>You are Failed</h3>
+    <h2>Mark : {{ ans.mark }}</h2>
+    
+{% endif %}
+    
+<a href="{% url 'home_page' %}"><button>Try agin</button></a>
+    
+{% endblock content %}
+    

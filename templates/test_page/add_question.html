@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<form action="" method="post" >
+    {% csrf_token %}
+
+    <label for="Question">Question :</label>
+    <textarea name="question" id="" cols="60" rows="5"></textarea>
+    <br><br>
+
+    <label for="">Option1 :</label>
+    <input type="text" name="option1" id="">
+    <br><br>
+
+    <label for="">Option2</label>
+    <input type="text" name="option2" id="">
+    <br><br>
+
+    <label for="">Option3</label>
+    <input type="text" name="option3" id="">
+    <br><br>
+
+    <label for="">Option4</label>
+    <input type="text" name="option4" id="">
+    <br><br>
+
+    <label for="">correct ans</label><br>
+    <label for="">opt1</label>
+    <input type="radio" name="option" value="option1">
+    <label for="">opt2</label>
+    <input type="radio" name="option" value="option2">
+    <label for="">opt3</label>
+    <input type="radio" name="option" value="option3">
+    <label for="">opt4</label>
+    <input type="radio" name="option" value="option4">
+    <br><br>
+
+    <button>Submit</button>
+
+    
+
+</form>
+
+    
+{% endblock content %}
+        

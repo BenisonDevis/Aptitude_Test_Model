@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h3>Register</h3>
+
+<form method="post">
+    {%csrf_token%}
+    <label for="">User name</label> <input type="text" name="username"><br><br>
+    <label for="">Full name</label> <input type="text" name="name"><br><br>
+    <label for="">Email</label> <input type="email" name="email"><br><br>
+    <label for="">Password</label> <input type="password" name="password1"><br><br>
+    <label for="">Confirm Password</label> <input type="password" name="password2"><br><br>
+    <input type="submit" value="Register">
+
+{% for msg in messages %}
+    <br><span style="color:{% if msg.tags == 'success' %}green{% else %}red{% endif %}">{{ msg }}</span><br>
+{% endfor %}
+
+</form>
+
+
+
+{% endblock content %}
