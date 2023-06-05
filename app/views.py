@@ -33,7 +33,7 @@ def home_page(request):
                 if anskey[i] == result[str(i)]:
                     mark+=1
                 else:
-                    mark-=0.25
+                    mark-=00.25
         
             
         print(mark)
